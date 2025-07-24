@@ -13,9 +13,10 @@ import { Brightness4Rounded, Brightness7Rounded } from '@mui/icons-material';
 
 import { enrichedHoldings } from './data/mockData';
 import PortfolioHoldingsTable from './components/holdingTable/PortfolioHoldingTable';
-import RiskChart from './components/RiskChart';
+import RiskChart from './components/chart/RiskChart';
 import { useThemeMode } from './components/context/ThemeModeContext';
 import PnLSummary from './components/pnl/PnLSummary';
+import HoldingsPriceChart from './components/chart/HoldingsPriceChart';
 
 function App() {
     const { mode, setMode } = useThemeMode();
@@ -60,6 +61,9 @@ function App() {
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }}>
                             <RiskChart holdings={enrichedHoldings} />
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 12 }}>
+                            <HoldingsPriceChart holdings={enrichedHoldings} />
                         </Grid>
                     </Grid>
                 </Box>
